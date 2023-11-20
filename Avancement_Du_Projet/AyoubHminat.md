@@ -56,3 +56,23 @@ Objectifs pour la semaine prochaine:
 - Nous avons tenté de comprendre les outils utilisés dans la partie de reconnaissance d'image afin de déterminer si la photo prise par la caméra contient un frelon ou une abeille, puis de transmettre l'information, en particulier la position, dans le cas où il s'agit d'un frelon.
 - L'outil utilisé est un site web appelé " Edge Impulse ", qui constitue une plateforme de développement pour l'apprentissage automatique sur des appareils embarqués. Cette plateforme facilite le processus de construction, de déploiement et de gestion des modèles d'apprentissage automatique sur des appareils embarqués, le rendant ainsi accessible et simple.
 - Dans notre cas, l'objectif est de prendre un maximum de photos de frelons et d'abeilles sous différents angles, positions et éclairages, afin de fournir cette base de données sur le site web pour entraîner le modèle à reconnaître la cible (le frelon, dans notre cas). Enfin, le modèle nous fournira un code final qui sera compatible avec la carte ESP32..
+
+
+
+## Semaine 5: 20/11/2023
+### (Travail en groupe)
+
+- Dans cette séance, nous avons essayé de tester les deux codes générés la dernière fois par l'outil Edge Impule. Mais, nous avons rencontré quelques problèmes lors de la comilation:
+     - En fait, l'outil de l'IA *Edge Impulse* ne génère des codes que pour deux modèles des cartes: nous pouvons pas utilisé le code pour la carte du modèle ESP32 Wrover-dev, par contre, pour la carte qui détècte le mouvement des frelons du modèle AI Thinker, ça fonctionne bien et ça arrive de détécter les frelons ( nous avons essayé de placer l'un des frelons qui se trouvent dans la boite à côté du caméra et de le faire bouger), ça affiche également les dimensions (x, y) du position de frelon.
+     - Nous avons essayé de définir beaucoup des types des modèles dans l'en-tête de code généré mais ça marché pas du tout.
+
+####  Pourquoi le choix du modèle ESP32 Wrover-dev?
+ -> Parce que, cette, carte, permet d'alimenter en même temps le moteur contrairement à l'autre. Donc l'objectif est de trouver une solution:
+ 
+  - Soit de trouver un autre outil similaire à *Edge Impulse* qui peut être un peu complexe parce qu'il faut entraîner notre modèle, de configurer ou/et d'adapter le modèle pour gérer les opérations d'inférence sur l'ESP32... ce qui va prendre du temps et des efforts.
+    
+  - Soit de trouver un moyen de communication entre les deux modèles de carte.
+
+
+   - Nous avons également commencer de souder des pins dans l'autre carte du modèle ESP32 Wrover-dev pour alimenter le moteur ave celle-ci qui fonctionne bien au niveau des images (parce que dans la première séance il y'avait deux carte de ce modèle et une ne fonctionne pas pour prendre des photos: elle alimente le moteur uniquement).
+   - Nous avons récupéré d'autres DataBase dans notre projet pour re-générer un autre code plus efficace: plus la database est grande, plus la probabilité de détécter le frelon est élevée. 
