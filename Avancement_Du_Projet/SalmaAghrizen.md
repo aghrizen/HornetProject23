@@ -75,8 +75,8 @@ Objectifs pour la semaine prochaine:
 
 #### Pourquoi le choix du modèle ESP32 Wrover-dev?
  -> Parce que, cette, carte, permet d'alimenter en même temps le moteur contrairement à l'autre. Donc l'objectif est de trouver une solution:
-  - Soit de trouver un autre outil similaire à *Edge Impulse* qui peut être un peu complexe parce qu'il faut entraîner notre modèle, de configurer ou/et d'adapter le modèle pour gérer les opérations d'inférence sur l'ESP32... ce qui va prendre du temps et des efforts.
-  - Soit de trouver un moyen de communication entre les deux modèles de carte.
+     - Soit de trouver un autre outil similaire à *Edge Impulse* qui peut être un peu complexe parce qu'il faut entraîner notre modèle, de configurer ou/et d'adapter le modèle pour gérer les opérations d'inférence sur l'ESP32... ce qui va prendre du temps et des efforts.
+     - Soit de trouver un moyen de communication entre les deux modèles de carte.
 
 
    - Nous avons également commencer de souder des pins dans l'autre carte du modèle ESP32 Wrover-dev pour alimenter le moteur ave celle-ci qui fonctionne bien au niveau des images (parce que dans la première séance il y'avait deux carte de ce modèle et une ne fonctionne pas pour prendre des photos: elle alimente le moteur uniquement).
