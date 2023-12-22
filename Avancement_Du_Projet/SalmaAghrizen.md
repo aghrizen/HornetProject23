@@ -83,3 +83,10 @@ Objectifs pour la semaine prochaine:
 
    - Nous avons également commencer de souder des pins dans l'autre carte du modèle ESP32 Wrover-dev pour alimenter le moteur ave celle-ci qui fonctionne bien au niveau des images (parce que dans la première séance il y'avait deux carte de ce modèle et une ne fonctionne pas pour prendre des photos: elle alimente le moteur uniquement).
    - Nous avons récupéré d'autres DataBase dans notre projet pour re-générer un autre code plus efficace: plus la database est grande, plus la probabilité de détécter le frelon est élevée. 
+
+
+## Semaine 5: 04/12/2023
+### (Travail en groupe)
+
+- Dans cette séance, nous avons arrivé de faire fonctionner le code génerer par l'outil d'I.A Edge Impulse avec la carte électronique du modèle WROVER. En fait
+- Maintenant, il faut trouver une solution pour contrôler la puissance du laser qui se trouve sur le moteur pas-à-pas: parce que sans contrôleur, ça reste dangereux de l'utiliser. Il faut voir si on doit utiliser une carte particulière pour le contôle ou un générateur de 12V.
