@@ -85,7 +85,7 @@ Objectifs pour la semaine prochaine:
    - Nous avons récupéré d'autres DataBase dans notre projet pour re-générer un autre code plus efficace: plus la database est grande, plus la probabilité de détécter le frelon est élevée. 
 
 
-## Semaine 5: 04/12/2023
+## Semaine 6: 04/12/2023
 ### (Travail en groupe)
 
 - Dans cette séance, nous avons arrivé de faire fonctionner le code génerer par l'outil d'I.A Edge Impulse avec la carte électronique du modèle WROVER.
