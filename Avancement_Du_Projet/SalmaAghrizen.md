@@ -95,4 +95,9 @@ Objectifs pour la semaine prochaine:
 
 ## Semaine 7: 22/12/2023
 ### (Travail en groupe)
-- Dans cette semaine, nous avons 
+- Dans cette semaine, nous avons essayé de trouver une méthode pour faire contrôler le laser. Parce que, qu'on on charge le code pour faire fonctionner le moteur, le laser reste allumé ce qui est dangereux puisqu'il chauffe. Il fallait donc, trouver un moyen pour qu'il s'allume uniquement le moement ou un frelon est détécter.
+- Après avoir faire une recherche, nous avons trouvé un schématic en pdf qui explique comment le laser a été contrôlé:
+    - Il suffit d'utiliser deux transistors pour contrôler le laser.
+    - Le pin 8 n'est utilisé que pour le laser.
+    - Le signal est soit 1 ou 0: 1 est la durée pour laquelle le laser reste allumé.
+- Il faut maintenant chercher comment peut on intégrer ce protocole qui fait contrôler le laser dans PCB. 
