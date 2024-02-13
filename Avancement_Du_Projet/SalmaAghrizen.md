@@ -100,4 +100,23 @@ Objectifs pour la semaine prochaine:
     - Il suffit d'utiliser deux transistors pour contrôler le laser.
     - Le pin 8 n'est utilisé que pour le laser.
     - Le signal est soit 1 ou 0: 1 est la durée pour laquelle le laser reste allumé.
-- Il faut maintenant chercher comment peut on intégrer ce protocole qui fait contrôler le laser dans PCB. 
+- Il faut maintenant chercher comment peut on intégrer ce protocole qui fait contrôler le laser dans PCB.
+
+
+## Semaine 8: 13/02/2024
+### (Soutenance du projet et travail en groupe)
+- Dans cette séance là, nous avons fait la soutenance du projet pour présenter au prof les avancements que nous avons fait par rapport à ce que les autres avaient fat l'année dernière.
+- Le code que nous avons généré par l'outil Edge Impulse doit être regénérer pour que le caméra détècte le vide.
+- Pour cet outil de l'I.A Edge Impulse, nous avons deux modèles d'entraînement que nous pouvons utiliser:
+    - Le modèle classique qui est déjà choisit par défaut et qui va fournir une librairie avec le nom du projet créer sur Edge Impulse. Donc pour faire fonctionner la carte avec celui-là, nous allons prendre tout simplement dans esp32 le code esp32_camera puis on l'intégre sur notre carte.
+    - Le deuxième est le modèle FOMO (First Object Most Object). Celui-là à pour but de générer un code plus condensé donc plus facile à comprendre par rapport au modèle de base. C'est parce qu'il génére de plus, une autre librairie qui contient les détails du programme. Dans ce code condensé, nous allons voir sur le moniteur, le 'label' qui reprèsente 'frelon' ou 'abeille', et les cordonnées x et y pour détécter le position du frelon dans l'espace.
+- Dans le code généré, il faut chaque fois le modifier en fonction du modèle de la carte que nous allons utiliser (AI Thinker où Wrover).
+- Le board à choisir sur Arduino qui va faire marcher n'importe quelle carte esp32, est le board: 'Esp32 Dev Module'.
+- Concernant le contrôle de laser, et comme ce que nous avons vu la dernière fois, il faut tester la solution avec les deux transistors MOSFET pour voir si ça va fonctionner où pas. Il faut, également, trouver une solution pour que le laser ne chauffe pas lors de notre processus, et qu'on contrôle sa puissance.
+
+Donc les objectifs à faire après cette soutenance là:
+- Re-génère le code avec Edge Impule pour que la caméra détècte le vide.
+- Tester la solution avec les deux transistors pour contrôler le laser.
+
+### (Travail Individuel)
+- Après la présentation, j'ai commencé à re-génèrer le code avec l'outil Edge Impulse.
