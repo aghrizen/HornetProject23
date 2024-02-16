@@ -126,3 +126,11 @@ Donc les objectifs à faire après cette soutenance là:
 ### (Travail Individuel)
 - Dans cette séance là, j'ai travaillé sur l'outil Edge Impulse, ça m'a pris toute la séance parce que j'ai choisi une database qui est énormément grande pour augmenter la précision. En prenant dans cette fois là, en considération, la saisie de background pour que, le programme généré, n'affiche pas 'hornet' ou 'bee' quand il y'a rien qui tourne en face du caméra.
 - Dans l'utilisation de l'outil, J'ai augmenté le nombre des cycles de training, ce qui m'a permet d'obtenir une détéction de 100% pour le frelon et pour l'abeille et aussi pour le background (regardez sur le répértoire rapport_en_pdf, edge_ipmulse_precised_version.pdf).
+
+
+### Semaine 8: 16/02/2024
+### (Travail en Groupe)
+- Nous avons passé, cette séance là, en faisant des modifications sur la nouvelle version du code regénéré par Edge Impulse, la dernière fois.
+### (Travail Individuel)
+- J'ai testé ce modèle sur la carte, et le problème de la détéction du vide n'était pas une bonne solution. Celui-là, a diminué la probabilité de la détction du frelon et de l'abeille. Ce qui affiche, par suite, 'Object not found' même si qu'il y'a le frelon juste en face de la caméra.
+- Donc pour résoudre ce problème, j'ai réduit la base des données dans même version du projet sur Edge Impulse. J'ai gardé que des photos net (regarder même rapport edge_impulse_precised_version). Et j'ai gardé que deux classes: 'bee' et 'hornet'. Parce que, dans les exemples en lignes normalement, l'outil de l'IA qu'on utilise cherche par lui même le background donc ça sert a rien de le préciser sur les images.
