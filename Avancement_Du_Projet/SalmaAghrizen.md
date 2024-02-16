@@ -120,3 +120,9 @@ Donc les objectifs à faire après cette soutenance là:
 
 ### (Travail Individuel)
 - Après la présentation, j'ai commencé à re-génèrer le code avec l'outil Edge Impulse.
+
+
+### Semaine 8: 14/02/2024
+### (Travail Individuel)
+- Dans cette séance là, j'ai travaillé sur l'outil Edge Impulse, ça m'a pris toute la séance parce que j'ai choisi une database qui est énormément grande pour augmenter la précision. En prenant dans cette fois là, en considération, la saisie de background pour que, le programme généré, n'affiche pas 'hornet' ou 'bee' quand il y'a rien qui tourne en face du caméra.
+- Dans l'utilisation de l'outil, J'ai augmenté le nombre des cycles de training, ce qui m'a permet d'obtenir une détéction de 100% pour le frelon et pour l'abeille et aussi pour le background (regardez sur le répértoire rapport_en_pdf, edge_ipmulse_precised_version.pdf).
