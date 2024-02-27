@@ -134,3 +134,14 @@ Donc les objectifs à faire après cette soutenance là:
 ### (Travail Individuel)
 - J'ai testé ce modèle sur la carte, et le problème de la détéction du vide n'était pas une bonne solution. Celui-là, a diminué la probabilité de la détction du frelon et de l'abeille. Ce qui affiche, par suite, 'Object not found' même si qu'il y'a le frelon juste en face de la caméra.
 - Donc pour résoudre ce problème, j'ai réduit la base des données dans même version du projet sur Edge Impulse. J'ai gardé que des photos net (regarder même rapport edge_impulse_precised_version). Et j'ai gardé que deux classes: 'bee' et 'hornet'. Parce que, dans les exemples en lignes normalement, l'outil de l'IA qu'on utilise cherche par lui même le background donc ça sert a rien de le préciser sur les images.
+
+
+
+### Semaine 9: 27/02/2024
+### (Travail en Groupe)
+- Dans cette séance, nous avons essayé de commencer de faire tester la solution que les autres ont proposé l'année dernière et qu'ils l'ont pas testé: c'était l'utilisation de deux transistors FET pour contrôler le laser.
+- Pour ceci, nous allons utilisé un laser du modèle qui a une puissance faible déjà, pour ne pas endommager quelque chose lors du test.
+- Il fallait pour ça, tester sur la carte Wrover directement. Donc, nous avons soudé des pins pour utilisé Vin.
+### (Travail Individuel)
+- Dans cette séance là, j'ai travaillée encore sur l'outil de Edge Impulse pour bien améliorer la précision. J'ai appris plein de choses sur le modèle de FOMO (regarder le rapport en PDF: edge_impulse_fomo_modele.pdf).
+- Comme rappel, il faut chaque fois, dans le code généré, ajouter le define et les pins du modèle Wrover de la carte.
