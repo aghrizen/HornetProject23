@@ -145,3 +145,14 @@ Donc les objectifs à faire après cette soutenance là:
 ### (Travail Individuel)
 - Dans cette séance là, j'ai travaillée encore sur l'outil de Edge Impulse pour bien améliorer la précision. J'ai appris plein de choses sur le modèle de FOMO (regarder le rapport en PDF: edge_impulse_fomo_modele.pdf).
 - Comme rappel, il faut chaque fois, dans le code généré, ajouter le define et les pins du modèle Wrover de la carte.
+
+
+
+### Semaine 9: 28/02/2024
+### (Travail Individuel)
+- Le problème que nous avons remarqué dans les séances précédentes, c'est que, le laser chauffe quand il est allumé. La solution c'était de ne le pas faire chauffer parce que c'est risqué lors du processus de la détéction.
+- La solution c'est d'utiliser un fan ventilateur qui est collé sur le laser. La fan est du modèle 'LD3010HS laser brushless DC fan', il fonctionne sous 12V, de puissance 168Watt.
+- Nous avons déjà, à notre disposition, ce fan. Le problème c'est que il y'avait un fil décracher du fan, il fallait le souder alors.
+### (Travail en groupe)
+- Nous avons essayé de souder le fil pour le faire fonctioner.
+- Nous avons réussi hier, à faire clignoter le petit laser à l'aide du code généré par Edge Impulse directement avec la carte Wrover aliménté.
