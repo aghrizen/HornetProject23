@@ -1,3 +1,5 @@
+#include <dummy.h>
+
 #include <Wire.h>
 #include "FrelonKiller.h"
 #include "EdgeImpulse.h"
@@ -31,6 +33,7 @@ Adafruit_PWMServoDriver pca9685 = Adafruit_PWMServoDriver(0x40);
 // Define servo motor connections (expand as required)
 #define SERX  0   //Servo Motor 0 on connector 0
 #define SERY  1  //Servo Motor 1 on connector 12
+#define LASER 2 //LAser
 
 #define SIZE_X_SCREEN 320
 #define SIZE_Y_SCREEN 240
@@ -59,12 +62,13 @@ int Current_Camera_Angle_X; //En degré
 int Current_Camera_Angle_Y; //En degré
 
 char State;
+bool LaserState = false;
 
 
 
 void setup() {
   // Serial monitor setup
-  State = DetectHornet;
+  State = INIT;
   Wire.begin(SDA , SCL);
   Serial.begin(115200);
 
@@ -77,6 +81,20 @@ void setup() {
   // Set PWM Frequency to 50Hz
   pca9685.setPWMFreq(50);
 
+  //Camera Init
+  while (!Serial);
+  Serial.println("Edge Impulse Inferencing Demo");
+  if ( ei_camera_init() == false) {
+      ei_printf("Failed to initialize Camera!\r\n");
+  }
+  else {
+      ei_printf("Camera initialized\r\n");
+  }
+
+  ei_printf("\nStarting continious inference in 2 seconds...\n");
+  ei_sleep(2000);
+
+
 }
 
 void loop() 
@@ -86,6 +104,7 @@ void loop()
   int picture_width;
   int picture_height;
   EdgeImpulseAnswer MyEdgeImpulseAnswerObj;
+  FunctionResult Result;
 
 
   while(true)
@@ -95,26 +114,39 @@ void loop()
 
       case INIT: 
         Motor_Initialization();
+        State = DETECT_HORNET;
       break;
 
       case DETECT_HORNET:
 
         DetectMotion(&MyEdgeImpulseAnswerObj);
-         if (MyEdgeImpulseAnswerObj.ShouldWeKill == "true")
+        if (LaserState == false)
+        {
+            LaserState = true;
+            pca9685.setPWM(LASER, 0, 4095);
+        }
+        else
+        {
+            LaserState = false;
+            pca9685.setPWM(LASER, 0, 0);
+        }
+
+        
+         if (MyEdgeImpulseAnswerObj.Name == "hornet")
          { 
             State = AIM_HORNET;
          } 
 
       break;
-      case :AIM_HORNET:
+      case AIM_HORNET:
            AimTarget(MyEdgeImpulseAnswerObj);
            State = VERIFY_HOVERING;
 
       break;
 
       case VERIFY_HOVERING:
-           bool Result = IsTargetNotMoving(&MyEdgeImpulseAnswerObj);
-           if (Result == true)
+           Result = IsTargetNotMoving(&MyEdgeImpulseAnswerObj);
+           if (Result.Result == true)
            {
              State = SHOOT;
            }
@@ -122,13 +154,14 @@ void loop()
            {
             State = INIT;
            }
+
       break;
 
       case SHOOT:
         Shoot(MyEdgeImpulseAnswerObj);
         State = INIT;
-
       break;
+
     }
   }
 }
@@ -147,6 +180,8 @@ FunctionResult DetectMotion(EdgeImpulseAnswer* MyEdgeImpulseAnswerObj)
   {
     myResult.Result = false;
   }
+
+  
   //AFFICHAGE 
   //If (  MyEdgeImpulseAnswerObj.Name == "hornet") 
   //{
@@ -207,7 +242,7 @@ FunctionResult AimTarget(EdgeImpulseAnswer MyEdgeImpulseAnswerObj)
     delay(5000);
 }
 
-FunctionResult IsTargetNotMoving(EdgeImpulseAnswer* LastEdgeImpulseAnswerObj)
+FunctionResult IsTargetNotMoving(EdgeImpulseAnswer* ValidEdgeImpulseAnswerObj)
 {
   FunctionResult MyResult; 
   int old_pos_x;
@@ -215,30 +250,35 @@ FunctionResult IsTargetNotMoving(EdgeImpulseAnswer* LastEdgeImpulseAnswerObj)
   int pos_x;
   int pos_y;
 
-  EndOfLoap = false;
-  while(EndOfLoap == false;)
+  float EndOfLoap = false;
+
+  EdgeImpulseAnswer LastEdgeImpulseAnswerObj = *ValidEdgeImpulseAnswerObj;
+  EdgeImpulseAnswer MyCurrentEdgeImpulseAnswerObj;
+ 
+
+  while(EndOfLoap == false)
   {
-    old_pos_x = LastEdgeImpulseAnswerObj.x + (LastEdgeImpulseAnswerObj.size_x)/2;
+     old_pos_x = LastEdgeImpulseAnswerObj.x + (LastEdgeImpulseAnswerObj.size_x)/2;
     old_pos_y = LastEdgeImpulseAnswerObj.y + (LastEdgeImpulseAnswerObj.size_y)/2;
 
-    EdgeImpulseAnswer MyCurrentEdgeImpulseAnswerObj = EdgeImpulse();
+    MyCurrentEdgeImpulseAnswerObj = EdgeImpulse();
 
     pos_x = MyCurrentEdgeImpulseAnswerObj.x + (MyCurrentEdgeImpulseAnswerObj.size_x)/2;
     pos_y = MyCurrentEdgeImpulseAnswerObj.y + (MyCurrentEdgeImpulseAnswerObj.size_y)/2;
-  }
 
-  //Si aucun frelon détecté
-  if (MyCurrentEdgeImpulseAnswerObj.Name != "hornet")
-  {
-    //Return false
-    MyResult.Result = false;
-    return MyResult
-  }
-  else
-  {
-    //Si on détecte toujours un frelon, on regarde si il a bougé
-    //Si la différente est seulement de quelques pixels, on repositionne la caméra
-    //#TODO
+    //Si aucun frelon détecté
+    if (MyCurrentEdgeImpulseAnswerObj.Name != "hornet")
+    {
+      //Return false
+      MyResult.Result = false;
+      return MyResult;
+    }
+    else
+    {
+      //Si on détecte toujours un frelon, on regarde si il a bougé
+      //Si la différente est seulement de quelques pixels, on repositionne la caméra
+      //#TODO
+    }
   }
   return MyResult;
 }
@@ -262,6 +302,8 @@ void Motor_Initialization()
   int PulseValueY = SERVOMID_Y;
   pca9685.setPWM(SERX, 0, PulseValueX);
   pca9685.setPWM(SERY, 0, PulseValueY);
+
+  pca9685.setPWM(LASER, 0, 4095);
 
   delay(5000);
   Current_Camera_Angle_X = 90;

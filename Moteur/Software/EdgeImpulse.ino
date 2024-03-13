@@ -20,11 +20,7 @@
  * SOFTWARE.
  */
 
-/* Includes ---------------------------------------------------------------- */
-#include <Hornet_inferencing.h>
-#include "edge-impulse-sdk/dsp/image/image.hpp"
 
-#include "esp_camera.h"
 #include "EdgeImpulse.h"
 
 // Select camera model - find more camera models in camera_pins.h file here
@@ -140,9 +136,7 @@ static camera_config_t camera_config = {
 };
 
 /* Function definitions ------------------------------------------------------- */
-bool ei_camera_init(void);
-void ei_camera_deinit(void);
-bool ei_camera_capture(uint32_t img_width, uint32_t img_height, uint8_t *out_buf) ;
+
 
 /**
 * @brief      Arduino setup function
@@ -231,7 +225,7 @@ EdgeImpulseAnswer EdgeImpulse()
         ei_printf("    %s (%f) [ x: %u, y: %u, width: %u, height: %u ]\n", bb.label, bb.value, bb.x, bb.y, bb.width, bb.height);
         CurrentEdgeImpulseAnswer.Name = bb.label;
         CurrentEdgeImpulseAnswer.x = bb.x;
-        CurrentEdgeImpulseAnswer.y = bb.y
+        CurrentEdgeImpulseAnswer.y = bb.y;
         CurrentEdgeImpulseAnswer.size_x = bb.width;
         CurrentEdgeImpulseAnswer.size_y = bb.height;
     }
