@@ -158,3 +158,9 @@ Donc les objectifs à faire après cette soutenance là:
 ### (Travail en groupe)
 - Nous avons essayé de souder le fil du fan pour le faire fonctioner.
 - Nous avons réussi hier, à faire clignoter le petit laser à l'aide du code généré par Edge Impulse directement avec la carte Wrover aliménté.
+
+
+### Semaine 10: 13/03/2024
+### (Travail en groupe)
+- La dernière fois, nous avons arrivé à faire fonctionner le petit Laser et à le contrôler à l'aide de PWM.
+- Nous avons intégré le code de contrôle et de fonctionnement du moteur dans le code qui était généré par Edge Impulse. Donc nous avons bien modifié ce dernier même aussi des fonctions définies.
