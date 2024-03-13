@@ -164,3 +164,4 @@ Donc les objectifs à faire après cette soutenance là:
 ### (Travail en groupe)
 - La dernière fois, nous avons arrivé à faire fonctionner le petit Laser et à le contrôler à l'aide de PWM.
 - Nous avons intégré le code de contrôle et de fonctionnement du moteur dans le code qui était généré par Edge Impulse. Donc nous avons bien modifié ce dernier même aussi des fonctions définies.
+- Nous avons alimenté le fan ventilateur, et ça a fonctioné parfaitement. Donc on est sûr qu'on va pas envisager le problème du chauffement de laser quand il est allumé.
