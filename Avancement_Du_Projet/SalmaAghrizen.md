@@ -164,8 +164,17 @@ Donc les objectifs à faire après cette soutenance là:
 ### (Travail en groupe)
 - La dernière fois, nous avons arrivé à faire fonctionner le petit Laser et à le contrôler à l'aide de PWM.
 - Nous avons intégré le code de contrôle et de fonctionnement du moteur dans le code qui était généré par Edge Impulse. Donc nous avons bien modifié ce dernier même aussi des fonctions définies.
-- Nous avons alimenté le fan ventilateur, et ça a fonctioné parfaitement. Donc on est sûr qu'on va pas envisager le problème du chauffement de laser quand il est allumé.
+- Nous avons alimenté le fan ventilateur, et ça a fonctioné bien. Donc on est sûr qu'on va pas envisager le problème du chauffement de laser quand il est allumé.
 
 
-  ### Semaine : 19/03/2024
-  ### (Travail 
+  ### Semaine 11: 19/03/2024
+  ### (Travail individuel)
+  - J'ai recommencé un nouveau projet sur Edge Impulse pour la détéction des objets. Parce que, il reste toujours un problème de la détéction de l'abeille: nous avons pas assez de base de données à utiliser sur notre projet, surtout au niveau de la détéction des abeilles. Donc, dans cette version, nous avons pris le maximum des images même ceux avec de mauvaises qualité que nous avions sur la carte SD.
+
+  ### Semaine 11: 20/03/2024
+  ### (Travail en groupe)
+  - Nous avons commencé de souder sur une petite carte la solution que les autres de l'année dernière ont proposé pour contrôler le laser: l'utilisation de deux transistors (NMOS, PMOS) pour contrôler l'allumage de laser avec le contrôleur PWM.
+ 
+  ### (Travail individuel)
+  - J'ai finit le training et le build du projet sur l'outil de l'I.A 'Edge Impulse' pour détécter nos objets ('frelon', 'abeille'). J'ai utiliser une data d'environs 1500 images en choisissant tout les images existant dans la carte SD et de ce que j'avais trouvé dans le dépôt git du projet de l'année dernière. Le problème c'était: la majorité des images ne contiennent ni un frelon ni une abeille. Le résultat d'utiliser ce data c'est d'avoir aucun projet détécté même si on place 'abeille' ou 'frelon' en face du caméra avec des différentes dimensions x et y. Donc, on reste sur une de nos version qui détécter bien un frelon, et n'affiche rien quand il y'a le background, et qui détècte pas souvent l'abeille.
+    
