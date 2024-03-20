@@ -1,0 +1,1 @@
+Dans ce projet, on arrive bien à détécter les frelons, et quand il y'a rien on arrive à rien détécter ce qui est bien. C'est juste l'abeille qu'on arrive pas à détécter. Il faut faire des tests en vrai vie pour voir en mode ative ce qui sera dététer.
