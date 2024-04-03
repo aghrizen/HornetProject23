@@ -179,3 +179,6 @@ Donc les objectifs à faire après cette soutenance là:
   - J'ai finit le training et le build du projet sur l'outil de l'I.A 'Edge Impulse' pour détécter nos objets ('frelon', 'abeille'). J'ai utiliser une data d'environs 1500 images en choisissant tout les images existant dans la carte SD et de ce que j'avais trouvé dans le dépôt git du projet de l'année dernière. J'ai bien arrivé à mettre en place une version (to_use_version_V2 sur répertoire EdgeImpuleCode) qui marche bien par rapport aux anciens versions. Le code détècte bien un frelon dedans la boîte, détècte rien quand il y'a rien dedans la boîte, c'est juste qu'il détècte pas les abeilles. Mais de toute façon il détècte rien si on place une abeille juste en face de la caméra. Ce problème de la non-détéction de l'abeille est à cause de ne pas avoir suffisamment des images de l'abeille.
 
     
+  ### Semaine 12: 03/04/2024
+  ### (Travail en groupe)
+  - Dans cette séance, nous avons 
