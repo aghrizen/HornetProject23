@@ -181,4 +181,5 @@ Donc les objectifs à faire après cette soutenance là:
     
   ### Semaine 12: 03/04/2024
   ### (Travail en groupe)
-  - Dans cette séance, nous avons 
+  - Dans cette séance, nous avons essayé de tester la solution proposée pour contrôler le laser. Il y'avait un problème du soudage. Du coup nous avons resoudé les composantes qui ont été mal soudés.
+  - Nous avons aussi travailler sur l'amélioration du code généré par EdgeImpulse l'outil de l'IA. Nous avons bien arrivé à le fonctionner avec le code du moteur. 
