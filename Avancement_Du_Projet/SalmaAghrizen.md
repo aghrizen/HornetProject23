@@ -183,3 +183,10 @@ Donc les objectifs à faire après cette soutenance là:
   ### (Travail en groupe)
   - Dans cette séance, nous avons essayé de tester la solution proposée pour contrôler le laser. Il y'avait un problème du soudage. Du coup nous avons resoudé les composantes qui ont été mal soudés.
   - Nous avons aussi travailler sur l'amélioration du code généré par EdgeImpulse l'outil de l'IA. Nous avons bien arrivé à le fonctionner avec le code du moteur. 
+
+
+  ### Semaine 12: 17/04/2024
+  ### (Travail en groupe)
+  - Dans cette semaine, nous avons placé les composants dedans la boîte.
+  - Pour trouver le bon emplacement de la caméra, nous avons pris des multiples images pour voir la position dans laquelle la caméra couvre le plus possible de l'espace.
+  - Le rapport 'emplacement_des_composants' montre bien comment nous avons les placé.
