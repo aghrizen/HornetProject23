@@ -189,4 +189,4 @@ Donc les objectifs à faire après cette soutenance là:
   ### (Travail en groupe)
   - Dans cette semaine, nous avons placé les composants dedans la boîte.
   - Pour trouver le bon emplacement de la caméra, nous avons pris des multiples images pour voir la position dans laquelle la caméra couvre le plus possible de l'espace.
-  - Le rapport 'emplacement_des_composants' montre bien comment nous avons les placé.
+  - Le rapport 'dispositif_final.pdf' montre bien comment nous avons les placé.
